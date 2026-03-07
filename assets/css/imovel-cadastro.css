@@ -1,0 +1,76 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 40px;
+}
+
+/* Título */
+h1, h2 {
+    text-align: center;
+}
+
+/* Formulário */
+form {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Campos */
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2d89ef;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b5fbf;
+}
+
+
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+
+thead {
+    background-color: #2d89ef;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e6f0ff;
+}

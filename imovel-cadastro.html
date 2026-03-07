@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Imovel</title>
+    <link rel="stylesheet" href="/assets/css/imovel-cadastro.css">
+</head>
+
+<body>
+    <h1>Cadastro de Imóvel</h1>
+    <div>
+        <label for="proprietario">Proprietário:</label>
+        <input type="text" id="proprietario" name="proprietario">
+    </div>
+    <div>
+        <label for="localidade">Localidade:</label>
+        <input type="text" id="localidade" name="localidade">
+    </div>
+    <div>
+        <label for="valor">Valor do imóvel:</label>
+        <input type="text" id="valor" name="valor">
+    </div>
+    <div>
+        <label for="quantidade-m2">Quantidade de m²:</label>
+        <input type="text" id="quantidade-m2" name="quantidade-m2">
+    </div>
+    <div>
+        <label for="construcao">Construção:</label>
+        <select id="construcao" name="construcao">
+            <option value="" selected disabled>Selecione...</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Salvar" id="botao-salvar">
+    </div>
+    <div>
+        <h2>Lista de Imóveis</h2>
+        <table border="1" id="tabela-imoveis">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Proprietário</th>
+                    <th>Localidade</th>
+                    <th>Valor</th>
+                    <th>m²</th>
+                    <th>Construção</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+<script src="/assets/js/imovel-cadastro.js"></script>
+
+</html>
