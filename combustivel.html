@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistema de Abastecimento</title>
+
+<link rel="stylesheet" href="/assets/css/abastecimento.css">
+
+</head>
+
+<body>
+
+<h1>Sistema de Abastecimento</h1>
+
+<div class="layout">
+
+<!-- COLUNA FORMULÁRIO -->
+
+<form>
+
+<h3>Tipo de Combustível</h3>
+
+<label>
+<input type="radio" name="combustivel" value="Gasolina">
+Gasolina
+</label>
+
+<label>
+<input type="radio" name="combustivel" value="Etanol">
+Etanol
+</label>
+
+<label>
+<input type="radio" name="combustivel" value="Diesel">
+Diesel
+</label>
+
+<br>
+
+<label>Litros</label>
+<input type="number" id="litros" placeholder="Digite a quantidade">
+
+<br>
+
+<label>Valor por Litro</label>
+<input type="number" id="valor" placeholder="Digite o valor">
+
+<br>
+
+<h3>Forma de Pagamento</h3>
+
+<label>
+<input type="radio" name="pagamento" value="dinheiro">
+Dinheiro (10% desconto)
+</label>
+
+<label>
+<input type="radio" name="pagamento" value="pix">
+Pix (8% desconto)
+</label>
+
+<label>
+<input type="radio" name="pagamento" value="cartao">
+Cartão (5% desconto)
+</label>
+
+<br>
+
+<button type="button" id="salvar">Salvar Abastecimento</button>
+
+</form>
+
+
+<!-- COLUNA TABELA -->
+
+<div class="tabela-box">
+
+<h2>Lista de Abastecimentos</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Combustível</th>
+<th>Litros</th>
+<th>Valor Litro</th>
+<th>Pagamento</th>
+<th>Subtotal</th>
+</tr>
+
+</thead>
+
+<tbody id="tabela-abastecimentos">
+
+</tbody>
+
+</table>
+
+<p id="codigo"></p>
+
+</div>
+
+</div>
+
+<script src="/assets/js/combustivel-pagamento.js"></script>
+
+</body>
+
+</html>

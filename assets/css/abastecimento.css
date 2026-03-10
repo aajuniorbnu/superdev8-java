@@ -1,0 +1,180 @@
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* BODY */
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#2f2f2f;
+color:white;
+padding:30px;
+}
+
+/* TÍTULO */
+
+h1{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+/* LAYOUT PRINCIPAL */
+
+.layout{
+display:flex;
+gap:30px;
+align-items:flex-start;
+flex-wrap:wrap;
+}
+
+/* FORMULÁRIO */
+
+form{
+background:#3a3a3a;
+padding:25px;
+border-radius:10px;
+width:320px;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* LABEL */
+
+label{
+display:block;
+margin-top:12px;
+font-size:14px;
+}
+
+/* INPUT */
+
+input[type="number"]{
+width:100%;
+padding:8px;
+margin-top:5px;
+border-radius:6px;
+border:none;
+background:#555;
+color:white;
+}
+
+/* RADIO */
+
+input[type="radio"]{
+margin-right:6px;
+}
+
+/* BOTÃO */
+
+button{
+width:100%;
+margin-top:20px;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#2ecc71;
+color:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#27ae60;
+}
+
+/* TABELA CONTAINER */
+
+.tabela-box{
+flex:1;
+background:#3a3a3a;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* TABELA */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+/* CABEÇALHO */
+
+thead{
+background:#2ecc71;
+}
+
+th{
+padding:12px;
+}
+
+/* CÉLULAS */
+
+td{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #555;
+}
+
+/* LINHAS ALTERNADAS */
+
+tbody tr:nth-child(even){
+background:#444;
+}
+
+/* HOVER */
+
+tbody tr:hover{
+background:#555;
+}
+
+/* TOTAL */
+
+#codigo{
+margin-top:15px;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:900px){
+
+.layout{
+flex-direction:column;
+}
+
+form{
+width:100%;
+}
+
+}
+
+@media(max-width:500px){
+
+body{
+padding:15px;
+}
+
+h1{
+font-size:24px;
+}
+
+table{
+font-size:13px;
+}
+
+th,td{
+padding:8px;
+}
+
+}
