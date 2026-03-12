@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Passagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-8">
+
+    <div class="max-w-4xl mx-auto">
+
+        <!-- HEADER -->
+        <header class="text-center mb-10">
+            <p class="text-xs tracking-widest uppercase text-yellow-400 mb-2">Sistema de Reservas</p>
+            <h1 class="text-4xl font-bold">Passagens Aéreas</h1>
+            <div class="w-16 h-0.5 bg-yellow-400 mx-auto mt-3"></div>
+        </header>
+
+        <!-- FORMULÁRIO -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 mb-8">
+            <h2 class="text-yellow-400 font-semibold text-sm tracking-widest uppercase mb-6 pb-4 border-b border-slate-700">
+                Nova Reserva
+            </h2>
+
+            <!-- Origem / Destino -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs tracking-widest uppercase text-slate-400">Origem</label>
+                    <input type="text" id="origem" placeholder="Ex: São Paulo (GRU)"
+                        class="bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 focus:bg-slate-700/80 transition">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs tracking-widest uppercase text-slate-400">Destino</label>
+                    <input type="text" id="destino" placeholder="Ex: Rio de Janeiro (GIG)"
+                        class="bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 focus:bg-slate-700/80 transition">
+                </div>
+            </div>
+
+            <!-- Data / Passageiros / Preço -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs tracking-widest uppercase text-slate-400">Data da Viagem</label>
+                    <input type="date" id="data-viagem"
+                        class="bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-yellow-400 transition">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs tracking-widest uppercase text-slate-400">Nº de Passageiros</label>
+                    <input type="number" id="passageiros" placeholder="Ex: 2" min="1"
+                        class="bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 transition">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs tracking-widest uppercase text-slate-400">Preço Base (R$)</label>
+                    <input type="number" id="preco-base" placeholder="Ex: 350.00" step="0.01" min="0"
+                        class="bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-yellow-400 transition">
+                </div>
+            </div>
+
+            <!-- Classe -->
+            <div class="flex flex-col gap-3 mb-6">
+                <label class="text-xs tracking-widest uppercase text-slate-400">Classe</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="classe" value="economica" class="accent-yellow-400">
+                        <span>Econômica</span>
+                    </label>
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="classe" value="executiva" class="accent-yellow-400">
+                        <span>Executiva <span class="text-yellow-400 text-xs">(+40%)</span></span>
+                    </label>
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="classe" value="primeira" class="accent-yellow-400">
+                        <span>Primeira Classe <span class="text-yellow-400 text-xs">(+120%)</span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Bagagem -->
+            <div class="flex flex-col gap-3 mb-8">
+                <label class="text-xs tracking-widest uppercase text-slate-400">Bagagem</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="bagagem" value="sem-bagagem" class="accent-yellow-400">
+                        <span>Sem Bagagem</span>
+                    </label>
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="bagagem" value="1-mala" class="accent-yellow-400">
+                        <span>1 Mala <span class="text-yellow-400 text-xs">(+R$ 80/pax)</span></span>
+                    </label>
+                    <label class="flex items-center gap-2 px-4 py-2.5 border border-slate-600 rounded-lg cursor-pointer hover:border-yellow-400 transition text-sm">
+                        <input type="radio" name="bagagem" value="2-malas" class="accent-yellow-400">
+                        <span>2 Malas <span class="text-yellow-400 text-xs">(+R$ 150/pax)</span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botão -->
+            <button id="reservar"
+                class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-bold py-4 rounded-xl tracking-widest uppercase text-sm transition active:scale-95">
+                Confirmar Reserva
+            </button>
+
+            <!-- Resultado -->
+            <div id="resultado" class="hidden mt-5 text-center text-yellow-300 bg-yellow-400/10 border border-yellow-400/30 rounded-xl py-4 text-lg font-semibold"></div>
+        </div>
+
+        <!-- TABELA -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8">
+            <h2 class="text-yellow-400 font-semibold text-sm tracking-widest uppercase mb-6 pb-4 border-b border-slate-700">
+                Reservas Realizadas
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-left">
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Origem</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Destino</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Data</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Pax</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Classe</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Bagagem</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Total</th>
+                            <th class="pb-3 px-3 text-xs tracking-widest uppercase text-yellow-400 font-medium">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-reservas"></tbody>
+                    <tfoot>
+                        <tr class="border-t border-slate-700">
+                            <td colspan="6" class="pt-4 px-3 text-slate-400 font-semibold uppercase text-xs tracking-widest">Total Geral</td>
+                            <td id="total-geral" class="pt-4 px-3 text-yellow-300 font-bold">R$ 0,00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/assets/js/passagem.js"></script>
+</body>
+</html>
